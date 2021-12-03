@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>H先生</title>
+<title>可以，那个学习的劲儿又回来了。 | H先生</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,14 +12,22 @@
 <link rel="stylesheet" href="https://littlebryant.github.io//styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="业精于勤，荒于嬉。">
-    
+    <meta name="description" content="慢慢找回那个状态，
+没事的，慢慢来。
+" />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -89,49 +97,36 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://littlebryant.github.io/post/ke-yi-na-ge-xue-xi-de-jing-er-you-hui-lai-liao/">
-                  <h2 class="post-title">可以，那个学习的劲儿又回来了。</h2>
-                </a>
-                <div class="post-date">
-                  2021-12-03
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
+          <div class="post-detail">
+            <h2 class="post-title">可以，那个学习的劲儿又回来了。</h2>
+            <div class="post-date">2021-12-03</div>
+            
+            <div class="post-content" v-pre>
+              <p>慢慢找回那个状态，<br>
+没事的，慢慢来。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
                 <a href="https://littlebryant.github.io/post/hello-gridea/">
-                  <h2 class="post-title">Hello Gridea</h2>
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
                 </a>
-                <div class="post-date">
-                  2018-12-12
-                </div>
-                <div class="post-abstract">
-                  <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-                </div>
               </div>
-              
-                <a class="right" href="https://littlebryant.github.io/post/hello-gridea/">
-                  <div class="feature-container" style="background-image: url('https://littlebryant.github.io//post-images/hello-gridea.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -152,6 +147,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '70e21bffa1aba41f424f',
+        clientSecret: 'd9b75c98b74338e05cc0f958df5e8985577977ff',
+        repo: 'littlebryant.github.io',
+        owner: 'littlebryant',
+        admin: ['littlebryant'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
