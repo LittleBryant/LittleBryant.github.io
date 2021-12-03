@@ -8,9 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://littlebryant.github.io//favicon.ico?v=1638503153506">
+<link rel="shortcut icon" href="https://littlebryant.github.io//favicon.ico?v=1638503447896">
 <link rel="stylesheet" href="https://littlebryant.github.io//styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -35,7 +41,7 @@ Gridea 主页
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://littlebryant.github.io/">
-        <img src="https://littlebryant.github.io//images/avatar.png?v=1638503153506" class="site-logo">
+        <img src="https://littlebryant.github.io//images/avatar.png?v=1638503447896" class="site-logo">
         <h1 class="site-title">H先生</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -85,7 +91,7 @@ Gridea 主页
       
     </div>
     <div class="site-description">
-      温故而知新
+      业精于勤，荒于嬉。
     </div>
     <div class="site-footer">
       Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://littlebryant.github.io//atom.xml" target="_blank">RSS</a>
@@ -139,6 +145,12 @@ Gridea 主页
             
 
             
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
 
           </div>
 
@@ -161,6 +173,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '70e21bffa1aba41f424f',
+        clientSecret: 'd9b75c98b74338e05cc0f958df5e8985577977ff',
+        repo: 'littlebryant.github.io',
+        owner: 'littlebryant',
+        admin: ['littlebryant'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

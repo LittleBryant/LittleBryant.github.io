@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebryant.github.io/</id>
     <title>H先生</title>
-    <updated>2021-12-03T03:47:12.055Z</updated>
+    <updated>2021-12-03T03:50:50.636Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebryant.github.io/"/>
     <link rel="self" href="https://littlebryant.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>业精于勤，荒于嬉。</subtitle>
     <logo>https://littlebryant.github.io/images/avatar.png</logo>
     <icon>https://littlebryant.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, H先生</rights>
