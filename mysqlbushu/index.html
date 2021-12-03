@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://littlebryant.github.io//favicon.ico?v=1638514912764">
+<link rel="shortcut icon" href="https://littlebryant.github.io//favicon.ico?v=1638516131970">
 <link rel="stylesheet" href="https://littlebryant.github.io//styles/main.css">
 
 
@@ -24,14 +24,15 @@
 
 
 
-    <meta name="description" content="一 、 安装Mysql
+    <meta name="description" content="😄😄
+一 、 安装Mysql
 1.1 MySQL 下载地址
 https://downloads.mysql.com/archives/community/
 
 1.2 解压
 解压之后里面有很多的MySQL的包，主要安装四个包：
 
-按照顺序将RPM包..." />
+按照顺序..." />
     <meta name="keywords" content="MySQL" />
   </head>
   <body>
@@ -41,7 +42,7 @@ https://downloads.mysql.com/archives/community/
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://littlebryant.github.io/">
-        <img src="https://littlebryant.github.io//images/avatar.png?v=1638514912764" class="site-logo">
+        <img src="https://littlebryant.github.io//images/avatar.png?v=1638516131970" class="site-logo">
         <h1 class="site-title">H先生</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -94,7 +95,7 @@ https://downloads.mysql.com/archives/community/
       业精于勤，荒于嬉。
     </div>
     <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://littlebryant.github.io//atom.xml" target="_blank">RSS</a>
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Strive</a> | <a class="rss" href="https://littlebryant.github.io//atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
@@ -107,7 +108,8 @@ https://downloads.mysql.com/archives/community/
             <div class="post-date">2021-12-03</div>
             
             <div class="post-content" v-pre>
-              <p>一 、 <strong>安装Mysql</strong></p>
+              <p>😄😄<br>
+一 、 <strong>安装Mysql</strong></p>
 <p>1.1 MySQL 下载地址</p>
 <p>https://downloads.mysql.com/archives/community/<br>
 <img src="https://littlebryant.github.io//post-images/1638511556995.jpg" alt="" loading="lazy"></p>
@@ -115,14 +117,11 @@ https://downloads.mysql.com/archives/community/
 解压之后里面有很多的MySQL的包，主要安装四个包：</p>
 <figure data-type="image" tabindex="1"><img src="https://littlebryant.github.io//post-images/1638511666127.jpg" alt="" loading="lazy"></figure>
 <p>按照顺序将RPM包在Linux上进行安装：</p>
-<pre><code>注意，在Centos 7 环境上安装RPM 会报如下错误：
-</code></pre>
+<p>注意，在Centos 7 环境上安装RPM 会报如下错误：</p>
 <figure data-type="image" tabindex="2"><img src="https://littlebryant.github.io//post-images/1638511808485.jpg" alt="" loading="lazy"></figure>
-<pre><code>错误原因：Centos 7 默认不支持MySQL，内部集成了mariadb, 安装MySQL的依赖文件会和mariadb依赖文件冲突。需要先卸载掉mariadb。
-
-解决：列出所有被安装的RPM package
-
-rpm -qa | grep mariadb 
+<p>错误原因：Centos 7 默认不支持MySQL，内部集成了mariadb, 安装MySQL的依赖文件会和mariadb依赖文件冲突。需要先卸载掉mariadb。</p>
+<p>解决：列出所有被安装的RPM package</p>
+<pre><code>rpm -qa | grep mariadb 
 
 强制卸载mariadb package：rpm -e `rpm -qa grep mariadb`
 </code></pre>
@@ -134,6 +133,38 @@ rpm -qa | grep mariadb
 <pre><code>grep 'temporary password' /var/log/mysqld.log
 </code></pre>
 <figure data-type="image" tabindex="3"><img src="https://littlebryant.github.io//post-images/1638512236632.jpg" alt="" loading="lazy"></figure>
+<p>进入MySQL：</p>
+<pre><code>mysql -uroot -p
+</code></pre>
+<p>输入初始化密码</p>
+<p>重置密码：<br>
+登录成功，重置MySQL密码，执行：</p>
+<pre><code>alter user user() identified by &quot;root1234&quot;;
+</code></pre>
+<p>这里需要注意的事密码的策略</p>
+<figure data-type="image" tabindex="4"><img src="https://littlebryant.github.io//post-images/1638515496273.jpg" alt="" loading="lazy"></figure>
+<p>上图修改密码异常：默认的密码策略为有大小写字母数字和符号。</p>
+<pre><code>FLUSH PRIVILEGES;
+</code></pre>
+<p>密码修改完成后，立即生效。</p>
+<p>1.4.1 设置远程连接</p>
+<p>MySQL 默认是localhost 访问权限。需要添加远程连接权限。</p>
+<p>切换 mysql 库</p>
+<pre><code>use mysql;
+</code></pre>
+<p>查看用户表:</p>
+<pre><code>select  User,authentication_string,Host from user;
+</code></pre>
+<p>如下图所示</p>
+<figure data-type="image" tabindex="5"><img src="https://littlebryant.github.io//post-images/1638515798572.jpg" alt="" loading="lazy"></figure>
+<p>创建root用户远程连接权限：</p>
+<pre><code>GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root1234';
+</code></pre>
+<p>MySQL 重新加载配置：</p>
+<pre><code>FLUSH PRIVILEGES;
+</code></pre>
+<p>配置了远程访问权限的root用户如下图所示：</p>
+<figure data-type="image" tabindex="6"><img src="https://littlebryant.github.io//post-images/1638515980010.jpg" alt="" loading="lazy"></figure>
 
             </div>
             
