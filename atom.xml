@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://littlebryant.github.io/</id>
-    <title>H先生</title>
-    <updated>2021-12-03T08:54:07.231Z</updated>
+    <title>H同学</title>
+    <updated>2021-12-03T09:46:29.479Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://littlebryant.github.io/"/>
     <link rel="self" href="https://littlebryant.github.io/atom.xml"/>
     <subtitle>业精于勤，荒于嬉。</subtitle>
     <logo>https://littlebryant.github.io/images/avatar.png</logo>
     <icon>https://littlebryant.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, H先生</rights>
+    <rights>All rights reserved 2021, H同学</rights>
     <entry>
-        <title type="html"><![CDATA[MySQL 集群部署]]></title>
+        <title type="html"><![CDATA[MySQL 主从搭建(1)]]></title>
+        <id>https://littlebryant.github.io/FTiiNWmGG/</id>
+        <link href="https://littlebryant.github.io/FTiiNWmGG/">
+        </link>
+        <updated>2021-12-03T09:02:18.000Z</updated>
+        <content type="html"><![CDATA[<p>😄😄<br>
+1.前言 关于MySQL 主从：</p>
+<p>1.1 为什么需要主从同步：</p>
+<p>首先 不是所有应用都需要对数据库进行主从架构的设置，毕竟设置架构本身是 有成本的。</p>
+<p>如果我们的目的在于提升数据库高并发访问的效率，那么首先需要考虑的应该是如何优化你的sql和索引，这种方式简单有效，其次是采用缓存的策略，比如使用redis。通过redis 高性能的优势将热点数据保存在内存数据库中，提升读取的效率，最后才是对数据库采用主从架构，进行读写分离。<br>
+按照上面的方式进行优化，使用和维护的成本是由低到高的。</p>
+<p>主从同步设计不仅能提高数据库的吞吐量：还有以下3个方面的作用：</p>
+<p>(1) 读写分离，可以通过主从复制的方式来同步数据，然后通过读写分离提高数据并发处理能力。</p>
+<p>简单的讲就是同一份数据被放到了多个服务器上，其中一个数据库是master主库，其余多个数据库是slave从库，当主库进行更新的时候，会自动讲数据复制到从库， 我们在客户端读取数据时，在从库中进行读取，采用读写分离的方式。</p>
+<p>(2) 数据备份，通过主从复制讲主库上的数据复制到了从库上，相当于是热备份机制，也就是在主库正常运行的情况下进行的备份。不会影响到服务。</p>
+<p>(3)</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MySQL 部署]]></title>
         <id>https://littlebryant.github.io/mysqlbushu/</id>
         <link href="https://littlebryant.github.io/mysqlbushu/">
         </link>
