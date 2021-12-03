@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>H先生</title>
+<title>MySQL 集群部署 | H先生</title>
 <meta name="description" content="业精于勤，荒于嬉。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -15,6 +15,12 @@
 <link rel="stylesheet" href="https://littlebryant.github.io//styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
 
@@ -23,6 +29,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://littlebryant.github.io/">H先生</a></h3>
@@ -76,91 +83,77 @@
   </div>
 </nav>
 
-
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>MySQL 集群部署</h1>
+            <p class="article-meta">
+              2021-12-03
+              
+                <a href="https://littlebryant.github.io/tag/0Vu1Hx5IV/" class="badge success">
+                  MySQL
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>一 、 <strong>安装Mysql</strong></p>
+<p>1.1 MySQL 下载地址</p>
+<p>https://downloads.mysql.com/archives/community/<br>
+<img src="https://littlebryant.github.io//post-images/1638511556995.jpg" alt="" loading="lazy"></p>
+<p>1.2 解压<br>
+解压之后里面有很多的MySQL的包，主要安装四个包：</p>
+<figure data-type="image" tabindex="1"><img src="https://littlebryant.github.io//post-images/1638511666127.jpg" alt="" loading="lazy"></figure>
+<p>按照顺序将RPM包在Linux上进行安装：</p>
+<pre><code>注意，在Centos 7 环境上安装RPM 会报如下错误：
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://littlebryant.github.io//post-images/1638511808485.jpg" alt="" loading="lazy"></figure>
+<pre><code>错误原因：Centos 7 默认不支持MySQL，内部集成了mariadb, 安装MySQL的依赖文件会和mariadb依赖文件冲突。需要先卸载掉mariadb。
+
+解决：列出所有被安装的RPM package
+
+rpm -qa | grep mariadb 
+
+强制卸载mariadb package：rpm -e `rpm -qa grep mariadb`
+</code></pre>
+<p>1.3 启动MySQL 服务</p>
+<pre><code>systemctl start mysqld 
+</code></pre>
+<p>1.4 修改用户名和密码</p>
+<p>查看初始化密码：</p>
+<pre><code>grep 'temporary password' /var/log/mysqld.log
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://littlebryant.github.io//post-images/1638512236632.jpg" alt="" loading="lazy"></figure>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://littlebryant.github.io/mysqlbushu/">MySQL 集群部署</a>
-    </h2>
-    <p class="article-meta">
-      2021-12-03
-      
-        <a href="https://littlebryant.github.io/tag/0Vu1Hx5IV/" class="badge secondary">
-          MySQL
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://littlebryant.github.io/mysqlbushu/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://littlebryant.github.io/ke-yi-na-ge-xue-xi-de-jing-er-you-hui-lai-liao/">可以，那个学习的劲儿又回来了。</a>
-    </h2>
-    <p class="article-meta">
-      2021-12-03
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://littlebryant.github.io/ke-yi-na-ge-xue-xi-de-jing-er-you-hui-lai-liao/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://littlebryant.github.io/hello-gridea/">Hello Gridea</a>
-    </h2>
-    <p class="article-meta">
-      2018-12-12
-      
-        <a href="https://littlebryant.github.io/tag/4dtyS2gd-/" class="badge secondary">
-          Gridea
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-    </p>
-    <div class="row">
-      <a href="https://littlebryant.github.io/hello-gridea/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://littlebryant.github.io/ke-yi-na-ge-xue-xi-de-jing-er-you-hui-lai-liao/">
+                <h3 class="post-title">
+                  可以，那个学习的劲儿又回来了。
+                </h3>
+              </a>
+            </div>
+          
         </div>
         
-        <div class="row flex-edges">
-  
-  
-</div>
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
-      
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://littlebryant.github.io//images/avatar.png?v=1638512286959" class="no-responsive avatar">
@@ -219,11 +212,11 @@
     </div>
     <div class="row">
       
-        <a href="https://littlebryant.github.io/tag/0Vu1Hx5IV/" class="badge success">
+        <a href="https://littlebryant.github.io/tag/0Vu1Hx5IV/" class="badge warning">
           MySQL
         </a>
       
-        <a href="https://littlebryant.github.io/tag/4dtyS2gd-/" class="badge ">
+        <a href="https://littlebryant.github.io/tag/4dtyS2gd-/" class="badge secondary">
           Gridea
         </a>
       
@@ -234,7 +227,9 @@
   </div>
 </div>
 
+
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
@@ -244,6 +239,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '70e21bffa1aba41f424f',
+        clientSecret: 'd9b75c98b74338e05cc0f958df5e8985577977ff',
+        repo: 'littlebryant.github.io',
+        owner: 'littlebryant',
+        admin: ['littlebryant'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
